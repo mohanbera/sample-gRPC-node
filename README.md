@@ -1,3 +1,3 @@
 # Simple gRPC implementation with nodejs
 
-Simple implementation for Unary, Server streaming, & client streaming for gRPC.
+Simple implementation of Unary, Server streaming, & Client streaming for gRPC.
