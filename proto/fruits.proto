@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+message Fruit {
+    string id = 1;
+    string name = 2;
+}
+
+message FruitList {
+    repeated Fruit Fruits = 1;
+}
+
+message Empty {}
+
+message FruitRequest {
+    string id = 1;
+}
+message FruitResponse {
+    Fruit Fruit = 1;
+}
+
+message FruitCountResponse {
+    int32 count = 1;
+}
+
+message FruitInfoRequest {
+    Fruit fruit = 1;
+}
+service FruitService {
+    rpc getAllFruits (FruitRequest) returns (FruitResponse) {}
+    rpc getStreamOfFruits(Empty) returns (stream FruitResponse) {}
+    rpc sendFruitsAsStream(stream Fruit) returns (FruitCountResponse) {}
+}                               
